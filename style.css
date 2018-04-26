@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+}
+
+#scene {
+    width: 100vw;
+    height: 56vw;
+    position: relative;
+    overflow: hidden;
+}
+
+#baggrund {
+    width: 100vw;
+    height: 56vw;
+    background-image: url(images/baggrund.svg);
+    background-size: 100%;
+    position: absolute;
+}
+
+#mellemgrund {
+    width: 100vw;
+    height: 56vw;
+    background-image: url(images/mellemgrund.svg);
+    background-size: 100%;
+    position: absolute;
+
+    animation-name: mellemgrund_kf;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
+#forgrund {
+    width: 100vw;
+    height: 56vw;
+    background-image: url(images/forgrund.svg);
+    background-size: 100%;
+    position: absolute;
+
+    animation-name: mellemgrund_kf;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+
+#lys {
+    width: 100vw;
+    height: 56vw;
+    background-image: url(images/lys.svg);
+    position: absolute;
+    background-size: 200%;
+    background-position: 0 0;
+
+    animation-name: lys_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+}
+
+@keyframes lys_kf {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -215% 0%;
+    }
+}
+
+@keyframes mellemgrund_kf {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0px, 0.5vw);
+    }
+}
+
+@keyframes forgrund_kf {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 0.5vw);
+    }
+}
+
+
+/*----dreng animation----*/
+
+#dreng_container {
+    position: absolute;
+    left: 16vw;
+    top: 35vw;
+}
+
+#dreng_sprite {
+    width: 15vw;
+    height: 21vw;
+    background-image: url(images/dreng_sprite.svg);
+    background-size: 500%;
+    background-position: 0 0;
+}
+
+/*----animationer----*/
+
+.dreng_danser {
+    animation-name: dreng_danser_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(5);
+    animation-iteration-count: infinite;
+}
+
+.dreng_drikker {
+    animation-name: dreng_drikker_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(4);
+    animation-direction: alternate;
+    animation-iteration-count: 4;
+}
+
+.dreng_mister_bukser {
+    animation-name: dreng_mister_bukser_kf;
+    animation-duration: 1.5s;
+    animation-timing-function: steps(4);
+}
+
+.dreng_stille {
+    animation-name: dreng_stille_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: infinite;
+}
+
+/*----animationer slut----*/
+
+/*----keyframes----*/
+
+@keyframes dreng_danser_kf {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -500% 0%;
+    }
+}
+
+@keyframes dreng_drikker_kf {
+    0% {
+        background-position: 0 -100%;
+    }
+    100% {
+        background-position: -400% -100%;
+    }
+}
+
+@keyframes dreng_mister_bukser_kf {
+    0% {
+        background-position: 0 -200%;
+    }
+    100% {
+        background-position: -400% -200%;
+    }
+}
+
+@keyframes dreng_stille_kf {
+    0% {
+        background-position: 0 100%;
+    }
+    100% {
+        background-position: -300% 100%;
+    }
+}
+
+/*----dreng animation slut----*/
+
+/*----pige animation----*/
+
+#pige_container {
+    position: absolute;
+    left: 30vw;
+    top: 37vw;
+}
+
+#pige_sprite {
+    width: 12vw;
+    height: 17vw;
+    background-image: url(images/pige_sprite.svg);
+    background-size: 300%;
+    background-position: 0 0;
+}
+
+/*----animationer----*/
+
+.pige_danser {
+    animation-name: pige_danser_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: infinite;
+}
+
+.pige_tager_billede {
+    animation-name: pige_tager_billede_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: infinite;
+}
+
+.pige_taenker {
+    background-position: -300% -198% !important;
+}
+
+/*----animationer slut----*/
+
+/*----keyframes----*/
+
+@keyframes pige_danser_kf {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -300% 0%;
+    }
+}
+
+@keyframes pige_tager_billede_kf {
+    0% {
+        background-position: 0 -100%;
+    }
+    100% {
+        background-position: -300% -100%;
+    }
+}
+
+/*----pige animation slut----*/
+
+/*----weeknd animation----*/
+
+#weeknd_container {
+    position: absolute;
+    left: 38vw;
+    top: 12.5vw;
+}
+
+#weeknd_sprite {
+    width: 10vw;
+    height: 14vw;
+    background-image: url(images/weeknd_sprite.svg);
+    background-size: 300%;
+    background-position: 0 0;
+}
+
+/*----animationer----*/
+
+.synger {
+    animation-name: synger_kf;
+    animation-duration: 1s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: infinite;
+}
+
+.raaber {
+    animation-name: raaber_kf;
+    animation-duration: 0.7s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+}
+
+.thumbs_up {
+    background-position: -100% -197% !important;
+}
+
+.thumbs_down {
+    background-position: 0 -197% !important;
+}
+
+/*----animationer slut----*/
+
+/*----keyframes----*/
+
+@keyframes synger_kf {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -300% 0%;
+    }
+}
+
+@keyframes raaber_kf {
+    0% {
+        background-position: 0 -100%;
+    }
+    100% {
+        background-position: -200% -100%;
+    }
+}
+
+/*----weeknd animation slut----*/
