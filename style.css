@@ -92,7 +92,7 @@ body {
 #dreng_container {
     position: absolute;
     left: 16vw;
-    top: 35vw;
+    top: 31vw;
 }
 
 #dreng_sprite {
@@ -181,7 +181,7 @@ body {
 #pige_container {
     position: absolute;
     left: 30vw;
-    top: 37vw;
+    top: 33vw;
 }
 
 #pige_sprite {
@@ -251,6 +251,34 @@ body {
     background-size: 300%;
 }
 
+/*----talebobler----*/
+
+#boble {
+    width: 17vw;
+    height: 14vw;
+    position: absolute;
+    left: 45vw;
+    top: 4vw;
+}
+
+#boble_sprite {
+    width: 17vw;
+    height: 14vw;
+    position: absolute;
+    background-image: url(images/talebobler.svg);
+    background-size: 400%;
+    visibility: hidden;
+}
+
+.talebobbel_class {
+    animation-name: talebobbel_class_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(3);
+    animation-fill-mode: both;
+    visibility: visible !important;
+}
+
 /*----animationer----*/
 
 .synger {
@@ -262,10 +290,14 @@ body {
 
 .raaber {
     animation-name: raaber_kf;
-    animation-duration: 0.7s;
+    animation-duration: 0.3s;
     animation-timing-function: steps(2);
-    animation-iteration-count: 4;
+    animation-iteration-count: 6;
     animation-fill-mode: both;
+}
+
+.raaber_stop {
+    background-position: -200% -100%;
 }
 
 .thumbs_up {
@@ -295,6 +327,15 @@ body {
     }
     100% {
         background-position: -200% -100%;
+    }
+}
+
+@keyframes talebobbel_class_kf {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -300% 0;
     }
 }
 

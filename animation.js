@@ -10,11 +10,11 @@ function start() {
     $("#mellemgrund").addClass("mellem_puls");
     $("#forgrund").addClass("for_puls");
     setTimeout(startFuldesnak, 7000);
-    setTimeout(drengDrikker, 500);
+    setTimeout(drengDrikker, 10000);
 }
 
 function startFuldesnak() {
-    $("#dreng_fuldesnak")[0].play();
+    //$("#dreng_fuldesnak")[0].play();
 }
 
 function drengDrikker() {
@@ -38,6 +38,7 @@ function pigeTagerBillede() {
     console.log("pigeTagerBillede");
 
     $("#grin_pige")[0].play();
+    $("#kliklyd")[0].play();
     $("#dreng_sprite").off("animationend", pigeTagerBillede);
     $("#pige_sprite").removeClass("pige_danser");
     $("#pige_sprite").addClass("pige_tager_billede");
@@ -49,22 +50,33 @@ function raaber() {
     console.log("theWeekndRaaber");
 
     $("#baggrund_lyd")[0].pause();
+    $("#baggrund_snak")[0].play();
+    $("#baggrund_snak")[0].volume = 0.2;
+    $("#scratch")[0].play();
     $("#pige_sprite").off("animationend", raaber);
     $("#weeknd_sprite").removeClass("synger");
-    $("#weeknd_sprite").addClass("raaber");
+    $("#boble_sprite").addClass("talebobbel_class");
+    $("#weeknd_sprite").addClass("raaber_stop");
     $("#mellemgrund").removeClass("mellem_puls");
     $("#forgrund").removeClass("for_puls");
+    setTimeout(raaberLyd, 1400);
+    setTimeout(snapchat, 5000);
+}
+
+function raaberLyd() {
     $("#theweknd")[0].play();
-    setTimeout(snapchat, 3000);
+    $("#weeknd_sprite").removeClass("raaber_stop");
+    $("#weeknd_sprite").addClass("raaber");
+    $("#dreng_sprite").removeClass("dreng_mister_bukser");
+    $("#dreng_sprite").addClass("dreng_stille");
 }
 
 function snapchat() {
     console.log("snapchatStarter")
 
-    $("#dreng_sprite").removeClass("dreng_mister_bukser");
-    $("#dreng_sprite").addClass("dreng_stille");
     $("#pige_sprite").removeClass("pige_tager_billede");
     $("#pige_sprite").addClass("pige_taenker");
+    $("#boble_sprite").removeClass("talebobbel_class");
     $("#mobil_container").addClass("slide");
     $("#mobil_container").on("animationend", vaelg);
 }
@@ -75,4 +87,32 @@ function vaelg() {
     $("#mobil_container").off("animationend", vaelg);
     $("#send").addClass("puls");
     $("#slet").addClass("puls");
+    $("#send").on("click", thumbsDown);
+    $("#slet").on("click", thumbsUp);
+}
+
+function thumbsDown() {
+    console.log("thumbsDown")
+
+    $("#booo")[0].play();
+    $("#send").off("click", thumbsDown);
+    $("#slet").off("click", thumbsUp);
+    $("#send").removeClass("puls");
+    $("#slet").removeClass("puls");
+    $("#weeknd_sprite").removeClass("raaber");
+    $("#weeknd_sprite").addClass("thumbs_down");
+}
+
+function thumbsUp() {
+    console.log("thumbsUp")
+
+    $("#jubel")[0].play();
+    $("#send").off("click", thumbsDown);
+    $("#slet").off("click", thumbsUp);
+    $("#send").removeClass("puls");
+    $("#slet").removeClass("puls");
+    $("#weeknd_sprite").removeClass("raaber");
+    $("#weeknd_sprite").addClass("thumbs_up");
+    $("#mellemgrund").addClass("mellem_puls");
+    $("#forgrund").addClass("for_puls");
 }
