@@ -158,10 +158,10 @@ body {
 
 @keyframes dreng_mister_bukser_kf {
     0% {
-        background-position: 0 200%;
+        background-position: 0 197%;
     }
     100% {
-        background-position: -300% 200%;
+        background-position: -300% 197%;
     }
 }
 
@@ -272,7 +272,7 @@ body {
 
 .talebobbel_class {
     animation-name: talebobbel_class_kf;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: 1;
     animation-timing-function: steps(3);
     animation-fill-mode: both;
@@ -353,7 +353,7 @@ body {
 }
 
 .slide {
-    animation: slide_kf 3s 1 both;
+    animation: slide_kf 2s 1 both;
 }
 
 #mobil {
@@ -410,3 +410,77 @@ body {
 }
 
 /*----mobil slut----*/
+
+/*----slut----*/
+
+#slut {
+    width: 100vw;
+    height: 56vw;
+    position: absolute;
+    overflow: hidden;
+    background-color: rgba(140, 203, 226, 0.8);
+    left: -110vw;
+    top: 0;
+}
+
+.slut_slide {
+    animation: slut_kf 0.5s 1 both linear;
+}
+
+#logo {
+    width: 30vw;
+    height: 30vw;
+    background-image: url(images/logo.svg);
+    background-size: 100%;
+    position: absolute;
+    left: 35vw;
+    top: 20vw;
+    animation: logo_puls_kf 0.5s infinite alternate linear;
+}
+
+#tekst {
+    width: 40vw;
+    height: 20vw;
+    background-image: url(images/tekst.svg);
+    background-size: 100%;
+    position: absolute;
+    left: 110vw;
+    top: 7vw;
+}
+
+.tekst_slide {
+    animation: tekst_kf 0.5s 1 both linear;
+}
+
+@keyframes logo_puls_kf {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes slut_kf {
+    0% {
+        left: -110vw;
+        top: 0;
+    }
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+
+@keyframes tekst_kf {
+    0% {
+        left: 110vw;
+        top: 7vw;
+    }
+    100% {
+        left: 30vw;
+        top: 7vw;
+    }
+}
+
+/*----slut slut----*

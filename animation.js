@@ -14,7 +14,8 @@ function start() {
 }
 
 function startFuldesnak() {
-    //$("#dreng_fuldesnak")[0].play();
+    $("#dreng_fuldesnak")[0].play();
+    $("#dreng_fuldesnak")[0].volume = 0.7;
 }
 
 function drengDrikker() {
@@ -59,8 +60,8 @@ function raaber() {
     $("#weeknd_sprite").addClass("raaber_stop");
     $("#mellemgrund").removeClass("mellem_puls");
     $("#forgrund").removeClass("for_puls");
-    setTimeout(raaberLyd, 1400);
-    setTimeout(snapchat, 5000);
+    setTimeout(raaberLyd, 2000);
+    setTimeout(snapchat, 6000);
 }
 
 function raaberLyd() {
@@ -101,6 +102,7 @@ function thumbsDown() {
     $("#slet").removeClass("puls");
     $("#weeknd_sprite").removeClass("raaber");
     $("#weeknd_sprite").addClass("thumbs_down");
+    setTimeout(slut, 4000);
 }
 
 function thumbsUp() {
@@ -115,4 +117,35 @@ function thumbsUp() {
     $("#weeknd_sprite").addClass("thumbs_up");
     $("#mellemgrund").addClass("mellem_puls");
     $("#forgrund").addClass("for_puls");
+    $("#pige_sprite").removeClass("pige_taenker");
+    $("#pige_sprite").addClass("pige_danser");
+    $("#dreng_sprite").removeClass("dreng_stille");
+    $("#dreng_sprite").addClass("dreng_danser");
+    setTimeout(startMusik, 4000);
+    setTimeout(slut, 4000);
+}
+
+function startMusik() {
+    $("#baggrund_lyd")[0].play();
+    $("#jubel")[0].volume = 0.4;
+    $("#weeknd_sprite").removeClass("thumbs_up");
+    $("#weeknd_sprite").addClass("synger");
+    $("#baggrund_snak")[0].pause();
+}
+
+function slut() {
+    console.log("slut")
+
+    $("#slut").addClass("slut_slide");
+    $('#logo').click(function () {
+        window.location = "http://privatsnak.dk/13-15/";
+    });
+    setTimeout(tekst, 1000);
+}
+
+function tekst() {
+    $("#tekst").addClass("tekst_slide");
+    $('#tekst').click(function () {
+        window.location = "http://privatsnak.dk/13-15/";
+    });
 }
